@@ -1,9 +1,18 @@
 <script setup lang="ts">
+import AnalyticsDashboard from '@/features/analytics/AnalyticsDashboard.vue';
+import AppHeader from './AppHeader.vue';
+import AppLayout from './AppLayout.vue';
 </script>
 
 <template>
-  <h1>Hello</h1>
+  <AppLayout>
+    <template #header>
+      <AppHeader />
+    </template>
+    <template #main>
+      <AnalyticsDashboard />
+    </template>
+  </AppLayout>
 </template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
