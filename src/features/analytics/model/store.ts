@@ -6,22 +6,19 @@ import {
   createFilterByParity,
   createFilterBySummaries,
   createSorterByName,
-} from '../lib/filters';
+  initializeEmptyState,
+} from '../lib';
 import type { AnalyticsState } from './types';
+import type { AnalyticsRecord } from '@/entities/analytics/model';
 
 export const useAnalyticsStore = defineStore<string, AnalyticsState>(
   'analytics',
   {
-    state: () => {
-      return {
-        allRecords: [],
-        filters: {
-          // TODO: make cleaner and more declarative
-          summary: [undefined, undefined, undefined, undefined, undefined],
-        },
-      };
-    },
+    state: initializeEmptyState,
     actions: {
+      setRecords(records: AnalyticsRecord[]) {
+        this.allRecords = records;
+      },
       updateNameFilter(nameFilter: string) {
         this.filters.name = nameFilter;
       },
