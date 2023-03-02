@@ -13,3 +13,9 @@
 
 1. Не хочу
 1. Времени мало
+
+### Cсылка?
+
+<p>
+   Вот - https://af-kay.github.io/spec--vue-dashboard/
+</p>
