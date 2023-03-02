@@ -11,8 +11,8 @@ export const createFilterByName = (name?: string) => {
     r.dataName.toLowerCase().includes(name.toLowerCase());
 };
 
-export const createFilterBySummaries = (summaries?: Array<undefined | number>) => {
-  if (!summaries?.length) {
+export const createFilterBySummaries = (summaries: Array<undefined | number>) => {
+  if (summaries.every(s => s === undefined)) {
     return PASSTHROUGH;
   }
 
