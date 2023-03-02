@@ -1,22 +1,37 @@
+<script setup lang="ts">
+import { useAnalyticsStore } from '../model/store';
+
+const store = useAnalyticsStore();
+</script>
+
 <template>
   <div class="SideMenu">
     <div class="CreateNew">Create new</div>
     <div class="Filters">
-      <div class="Filter">
+      <div
+        :class="`Filter ${store.filters.rowParity === 'EVEN' ? 'active' : ''}`"
+        @click="() => store.updateRowParityFilter('EVEN')"
+      >
         <!-- Icon -->
         <div class="Info">
           <div class="Title">Even rows of data</div>
           <div class="Desc">Display rows 2,4,6 etc</div>
         </div>
       </div>
-      <div class="Filter">
+      <div
+        :class="`Filter ${store.filters.rowParity === 'ODD' ? 'active' : ''}`"
+        @click="() => store.updateRowParityFilter('ODD')"
+      >
         <!-- Icon -->
         <div class="Info">
           <div class="Title">Even odd of data</div>
           <div class="Desc">Display rows 1,3,5 etc</div>
         </div>
       </div>
-      <div class="Filter">
+      <div
+        :class="`Filter ${!store.filters.rowParity ? 'active' : ''}`"
+        @click="() => store.updateRowParityFilter(undefined)"
+      >
         <!-- Icon -->
         <div class="Info">
           <div class="Title">All data</div>
@@ -58,6 +73,17 @@
 
     .Filter {
       cursor: pointer;
+
+      &.active {
+        background: #e6efff;
+        .Icon {
+          color: $c-primary;
+        }
+      }
+
+      .Icon {
+      }
+
       .Info {
         .Title {
           font-size: 0.9rem;
