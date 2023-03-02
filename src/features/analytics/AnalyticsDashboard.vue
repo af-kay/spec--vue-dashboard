@@ -1,12 +1,18 @@
+<script setup lang="ts">
+import SideMenu from './ui/SideMenu.vue';
+</script>
+
 <template>
   <div class="AnalyticsDashboard">
-    Analytics Dashboard
+    <SideMenu />
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
   .AnalyticsDashboard {
-    // border: 1px dashed pink;
-    background: aquamarine;
+    border: 1px dashed pink;
+    background: #e2f0f0;
+    height: 100%;
+    display: flex;
   }
 </style>
