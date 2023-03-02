@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import DashboardTable from './DashboardTable.vue';
+</script>
+
 <template>
   <div class="DashboardContent">
     <div class="TitleRow">
@@ -9,6 +13,9 @@
         <button>print</button>
         <button>download</button>
       </div>
+    </div>
+    <div class="TableRow">
+      <DashboardTable />
     </div>
   </div>
 </template>
@@ -22,7 +29,6 @@
 }
 
 .DashboardContent {
-  border: 1px dashed maroon;
   flex: 1;
   padding: 12px;
 
@@ -34,6 +40,9 @@
       display: flex;
       column-gap: 4px;
     }
+  }
+  .TableRow {
+    display: block;
   }
 }
 </style>

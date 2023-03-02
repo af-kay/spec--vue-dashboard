@@ -1,3 +1,4 @@
+import isUndefined from '@/shared/lib/isUndefined';
 import type { AnalyticsRecord } from '@/entities/analytics/model';
 import type { AnalyticsState } from '../model/types';
 
@@ -11,8 +12,10 @@ export const createFilterByName = (name?: string) => {
     r.dataName.toLowerCase().includes(name.toLowerCase());
 };
 
-export const createFilterBySummaries = (summaries: Array<undefined | number>) => {
-  if (summaries.every(s => s === undefined)) {
+export const createFilterBySummaries = (
+  summaries: Array<undefined | number>
+) => {
+  if (summaries.every(isUndefined)) {
     return PASSTHROUGH;
   }
 
@@ -23,7 +26,9 @@ export const createFilterBySummaries = (summaries: Array<undefined | number>) =>
   };
 };
 
-export const createFilterByParity = (parity?: AnalyticsState['filters']['rowParity']) => {
+export const createFilterByParity = (
+  parity?: AnalyticsState['filters']['rowParity']
+) => {
   if (!parity) {
     return PASSTHROUGH;
   }
@@ -33,7 +38,9 @@ export const createFilterByParity = (parity?: AnalyticsState['filters']['rowPari
   return (_: unknown, index: number) => index % 2 === expectedRemainer;
 };
 
-export const createSorterByName = (orderingByName?: AnalyticsState['orderingByName']) => {
+export const createSorterByName = (
+  orderingByName?: AnalyticsState['orderingByName']
+) => {
   if (!orderingByName) {
     return () => 0;
   }

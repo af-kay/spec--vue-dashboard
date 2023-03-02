@@ -1,40 +1,26 @@
 <template>
   <div class="SideMenu">
-    <div class="CreateNew">
-      Create new
-    </div>
+    <div class="CreateNew">Create new</div>
     <div class="Filters">
       <div class="Filter">
         <!-- Icon -->
         <div class="Info">
-          <div class="Title">
-            Even rows of data
-          </div>
-          <div class="Desc">
-            Display rows 2,4,6 etc
-          </div>
+          <div class="Title">Even rows of data</div>
+          <div class="Desc">Display rows 2,4,6 etc</div>
         </div>
       </div>
       <div class="Filter">
         <!-- Icon -->
         <div class="Info">
-          <div class="Title">
-            Even odd of data
-          </div>
-          <div class="Desc">
-            Display rows 1,3,5 etc
-          </div>
+          <div class="Title">Even odd of data</div>
+          <div class="Desc">Display rows 1,3,5 etc</div>
         </div>
       </div>
       <div class="Filter">
         <!-- Icon -->
         <div class="Info">
-          <div class="Title">
-            All data
-          </div>
-          <div class="Desc">
-            Display all data
-          </div>
+          <div class="Title">All data</div>
+          <div class="Desc">Display all data</div>
         </div>
       </div>
     </div>
@@ -74,10 +60,10 @@
       cursor: pointer;
       .Info {
         .Title {
-          font-size: .9rem;
+          font-size: 0.9rem;
         }
         .Desc {
-          font-size: .7rem;
+          font-size: 0.7rem;
         }
       }
     }

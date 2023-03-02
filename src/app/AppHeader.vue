@@ -108,7 +108,7 @@ $img-h: 40px;
   }
   .Tabs {
     display: flex;
-    $dash: 1px dashed #cecece; 
+    $dash: 1px dashed #cecece;
 
     &::before {
       width: $w-side-menu;
