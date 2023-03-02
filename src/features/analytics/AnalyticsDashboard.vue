@@ -6,7 +6,7 @@
 
 <style lang="scss">
   .AnalyticsDashboard {
-    border: 1px dashed pink;
+    // border: 1px dashed pink;
     background: aquamarine;
   }
 </style>

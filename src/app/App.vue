@@ -14,5 +14,3 @@ import AppLayout from './AppLayout.vue';
     </template>
   </AppLayout>
 </template>
-
-<style scoped lang="scss"></style>
