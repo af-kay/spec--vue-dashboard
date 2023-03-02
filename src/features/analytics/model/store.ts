@@ -32,18 +32,30 @@ export const useAnalyticsStore = defineStore('analytics', {
     ) {
       this.filters.rowParity = rowParityFilter;
     },
-    updateNameOrdering(nameOrdering?: AnalyticsState['orderingByName']) {
-      this.orderingByName = nameOrdering;
+    toggleOrdering() {
+      const nextOrdering = (() => {
+        switch (this.orderingByName) {
+          case 'ASC':
+            return 'DESC';
+          case 'DESC':
+            return undefined;
+          case undefined:
+          default:
+            return 'ASC';
+        }
+      })();
+
+      this.orderingByName = nextOrdering;
     },
   },
   getters: {
-    filteredRecords: ({ allRecords, filters, orderingByName }) => {
-      const nameFilter = createFilterByName(filters.name);
-      const summariesFilter = createFilterBySummaries(filters.summary);
-      const parityFilter = createFilterByParity(filters.rowParity);
-      const sorterByName = createSorterByName(orderingByName);
+    filteredRecords: (s) => {
+      const nameFilter = createFilterByName(s.filters.name);
+      const summariesFilter = createFilterBySummaries(s.filters.summary);
+      const parityFilter = createFilterByParity(s.filters.rowParity);
+      const sorterByName = createSorterByName(s.orderingByName);
 
-      return allRecords
+      return s.allRecords
         .filter(nameFilter)
         .filter(summariesFilter)
         .filter(parityFilter)

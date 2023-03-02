@@ -13,6 +13,7 @@ const store = useAnalyticsStore();
     :summarySearches="store.filters.summary"
     :onSummarySearchChange="store.updateSummaryFilter"
     :ordering="store.orderingByName"
+    :onOrderingToggle="store.toggleOrdering"
   />
 </template>
 

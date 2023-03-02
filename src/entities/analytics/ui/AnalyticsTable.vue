@@ -30,7 +30,15 @@ const props = defineProps({
     type: String as PropType<'ASC' | 'DESC'>,
     required: false,
   },
+  onOrderingToggle: {
+    type: Function as PropType<() => void>,
+    required: true,
+  },
 });
+
+const toggleOrdering = () => {
+  props.onOrderingToggle();
+};
 
 const updateNameSearch = (e: Event) => {
   // @ts-ignore
@@ -55,7 +63,25 @@ const updateSummarySearch = (e: Event, index: number) => {
   <div class="AnalyticsTableContainer">
     <table class="AnalyticsTable">
       <thead class="HeaderRow">
-        <th class="Header DataHeader">Data</th>
+        <th class="Header DataHeader" @click="toggleOrdering">
+          <div class="Icons">
+            <span
+              :class="`material-icons-round ${
+                props.ordering === 'DESC' ? 'active' : ''
+              }`"
+              >expand_less</span
+            >
+            <span
+              :class="`material-icons-round ${
+                props.ordering === 'ASC' ? 'active' : ''
+              }`"
+              >expand_more</span
+            >
+          </div>
+          <div class="Title">
+            <span>Data</span>
+          </div>
+        </th>
         <th
           class="Header SummaryHeader"
           v-for="(_, index) in Array.from({ length: summariesPerRecord })"
@@ -109,6 +135,32 @@ const updateSummarySearch = (e: Event, index: number) => {
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     table-layout: fixed;
+
+    .DataHeader {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      width: 100% !important;
+
+      .Icons {
+        display: flex;
+        flex-direction: column;
+        span {
+          color: #c6cacc;
+          font-size: 16px;
+          margin: -4px 0;
+
+          &.active {
+            color: #069697;
+          }
+        }
+      }
+
+      .Title {
+        flex: 1;
+      }
+    }
 
     .DataHeader,
     .DataCell {
