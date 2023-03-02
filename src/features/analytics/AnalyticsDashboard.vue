@@ -23,7 +23,6 @@ getAnalytics().then((data) => {
 
 <style scoped lang="scss">
 .AnalyticsDashboard {
-  border: 1px dashed pink;
   background: #e2f0f0;
   height: 100%;
   display: flex;

@@ -12,7 +12,7 @@ const store = useAnalyticsStore();
         :class="`Filter ${store.filters.rowParity === 'EVEN' ? 'active' : ''}`"
         @click="() => store.updateRowParityFilter('EVEN')"
       >
-        <!-- Icon -->
+        <div class="Icon">E</div>
         <div class="Info">
           <div class="Title">Even rows of data</div>
           <div class="Desc">Display rows 2,4,6 etc</div>
@@ -22,7 +22,7 @@ const store = useAnalyticsStore();
         :class="`Filter ${store.filters.rowParity === 'ODD' ? 'active' : ''}`"
         @click="() => store.updateRowParityFilter('ODD')"
       >
-        <!-- Icon -->
+        <div class="Icon">O</div>
         <div class="Info">
           <div class="Title">Even odd of data</div>
           <div class="Desc">Display rows 1,3,5 etc</div>
@@ -32,7 +32,7 @@ const store = useAnalyticsStore();
         :class="`Filter ${!store.filters.rowParity ? 'active' : ''}`"
         @click="() => store.updateRowParityFilter(undefined)"
       >
-        <!-- Icon -->
+        <div class="Icon">A</div>
         <div class="Info">
           <div class="Title">All data</div>
           <div class="Desc">Display all data</div>
@@ -73,6 +73,7 @@ const store = useAnalyticsStore();
 
     .Filter {
       cursor: pointer;
+      display: flex;
 
       &.active {
         background: #e6efff;
@@ -82,6 +83,7 @@ const store = useAnalyticsStore();
       }
 
       .Icon {
+        color: #78909C;
       }
 
       .Info {
@@ -90,6 +92,7 @@ const store = useAnalyticsStore();
         }
         .Desc {
           font-size: 0.7rem;
+          color: #5E6366;
         }
       }
     }

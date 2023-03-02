@@ -64,7 +64,7 @@ const updateSummarySearch = (e: Event, index: number) => {
         </th>
       </thead>
       <tbody>
-        <tr class="Row" v-for="row in rows">
+        <tr class="Row DataRow" v-for="row in rows">
           <td class="Cell DataCell">{{ row.dataName }}</td>
           <td
             class="Cell SummaryCell"
@@ -121,12 +121,15 @@ const updateSummarySearch = (e: Event, index: number) => {
       width: 15%;
     }
 
+    .DataRow .Cell {
+      border-bottom: 1px solid #e3e5e5;
+    }
+
     .Cell {
       font-family: 'Roboto', sans-serif;
       height: 64px;
       padding: 16px 0;
       font-size: 20px;
-      border-bottom: 1px solid #e3e5e5;
     }
     .SummaryCell {
       color: #5e6366;
@@ -138,19 +141,24 @@ const updateSummarySearch = (e: Event, index: number) => {
       padding: 8px 0;
     }
 
-    .InputsRow .Cell input {
-      position: relative;
-      background: transparent;
-      border: 1px solid #c6cacc;
-      height: 32px;
-      border-radius: $border-radius-default;
-      max-width: 100%;
-      padding: 10px;
+    .InputsRow {
+      .Cell input {
+        position: relative;
+        background: transparent;
+        border: 1px solid #c6cacc;
+        height: 32px;
+        border-radius: $border-radius-default;
+        max-width: 100%;
+        padding: 10px;
 
-      &::placeholder {
-        color: black;
-        line-height: 32px;
-        left: 6px;
+        &::placeholder {
+          color: black;
+          line-height: 32px;
+          left: 6px;
+        }
+      }
+      .SummarySearchCell {
+        padding-left: 16px;
       }
     }
   }
