@@ -24,7 +24,7 @@ const store = useAnalyticsStore();
       >
         <div class="Icon">O</div>
         <div class="Info">
-          <div class="Title">Even odd of data</div>
+          <div class="Title">Odd rows of data</div>
           <div class="Desc">Display rows 1,3,5 etc</div>
         </div>
       </div>
