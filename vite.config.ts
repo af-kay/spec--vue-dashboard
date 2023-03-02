@@ -13,9 +13,7 @@ export default defineConfig({
   preview: {
     port: 3000,
   },
-  build: {
-    assetsDir: 'spec--vue-dashboard/assets',
-  },
+  base: '/spec--vue-dashboard/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
