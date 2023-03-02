@@ -81,6 +81,7 @@ $img-h: 40px;
           height: 100%;
           height: 40px;
           padding: $p-default;
+          background: #F7F9FA;
           border-radius: $border-radius-default;
           &::placeholder {
             color: #5E6366;
