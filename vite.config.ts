@@ -14,7 +14,7 @@ export default defineConfig({
     port: 3000,
   },
   build: {
-    assetsDir: '/spec--vue-dashboard/assets',
+    assetsDir: 'spec--vue-dashboard/assets',
   },
   resolve: {
     alias: {
