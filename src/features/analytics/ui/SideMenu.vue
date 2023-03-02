@@ -6,13 +6,20 @@ const store = useAnalyticsStore();
 
 <template>
   <div class="SideMenu">
-    <div class="CreateNew">Create new</div>
+    <div class="CreateNew">
+      <span class="Icon material-icons-round">add_circle</span>
+      <span class="Text">
+        <span>Create new</span>
+      </span>
+    </div>
     <div class="Filters">
       <div
         :class="`Filter ${store.filters.rowParity === 'EVEN' ? 'active' : ''}`"
         @click="() => store.updateRowParityFilter('EVEN')"
       >
-        <div class="Icon">E</div>
+        <div class="Icon">
+          <span class="material-icons-round">data_usage</span>
+        </div>
         <div class="Info">
           <div class="Title">Even rows of data</div>
           <div class="Desc">Display rows 2,4,6 etc</div>
@@ -22,7 +29,9 @@ const store = useAnalyticsStore();
         :class="`Filter ${store.filters.rowParity === 'ODD' ? 'active' : ''}`"
         @click="() => store.updateRowParityFilter('ODD')"
       >
-        <div class="Icon">O</div>
+        <div class="Icon">
+          <span class="material-icons-outlined">done_outline</span>
+        </div>
         <div class="Info">
           <div class="Title">Odd rows of data</div>
           <div class="Desc">Display rows 1,3,5 etc</div>
@@ -32,7 +41,9 @@ const store = useAnalyticsStore();
         :class="`Filter ${!store.filters.rowParity ? 'active' : ''}`"
         @click="() => store.updateRowParityFilter(undefined)"
       >
-        <div class="Icon">A</div>
+        <div class="Icon">
+          <span class="material-icons-round">print</span>
+        </div>
         <div class="Info">
           <div class="Title">All data</div>
           <div class="Desc">Display all data</div>
@@ -57,6 +68,8 @@ const store = useAnalyticsStore();
 
   .CreateNew {
     cursor: pointer;
+    display: flex;
+    column-gap: 16px;
     background: #fff;
     padding: 16px;
     text-align: center;
@@ -64,7 +77,18 @@ const store = useAnalyticsStore();
     box-shadow: $shadow-primary;
     border-radius: 99px;
     font-size: 16px;
+    align-items: center;
     font-weight: 500;
+
+    .Icon {
+      padding-left: 8px;
+      font-size: 20px;
+    }
+
+    .Text {
+      font-size: 20px;
+      font-weight: 500;
+    }
   }
   .Filters {
     display: flex;
@@ -74,16 +98,19 @@ const store = useAnalyticsStore();
     .Filter {
       cursor: pointer;
       display: flex;
+      padding: 8px;
+      column-gap: 16px;
 
       &.active {
         background: #e6efff;
+        border-radius: $border-radius-default;
         .Icon {
           color: $c-primary;
         }
       }
 
       .Icon {
-        color: #78909C;
+        color: #78909c;
       }
 
       .Info {
@@ -92,7 +119,7 @@ const store = useAnalyticsStore();
         }
         .Desc {
           font-size: 0.7rem;
-          color: #5E6366;
+          color: #5e6366;
         }
       }
     }

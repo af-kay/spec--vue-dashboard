@@ -8,7 +8,7 @@
       <div class="Interactions">
         <div class="Help">
           <input type="text" disabled placeholder="Help" />
-          <span>?</span>
+          <span class="material-icons-round">help</span>
         </div>
         <div class="Upgrade">
           <button>Upgrade</button>
@@ -77,14 +77,22 @@ $img-h: 40px;
 
         input {
           border: none;
+          font-size: 16px;
           height: 100%;
+          height: 40px;
           padding: $p-default;
           border-radius: $border-radius-default;
+          &::placeholder {
+            color: #5E6366;
+          }
         }
 
         span {
           position: absolute;
-          top: 25%;
+          color: #C6CACC;
+          font-size: 26px;
+          top: 7px;
+          right: 4px;
           right: $header-p;
         }
       }

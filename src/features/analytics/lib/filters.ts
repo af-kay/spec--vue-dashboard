@@ -35,7 +35,11 @@ export const createFilterByParity = (
 
   const expectedRemainer = parity === 'ODD' ? 1 : 0;
 
-  return (_: unknown, index: number) => index % 2 === expectedRemainer;
+  return (_: unknown, index: number) => {
+    const rowNumber = index + 1;
+
+    return rowNumber % 2 === expectedRemainer;
+  };
 };
 
 export const createSorterByName = (

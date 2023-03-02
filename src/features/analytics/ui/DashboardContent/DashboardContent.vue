@@ -14,8 +14,12 @@ import DashboardTable from './DashboardTable.vue';
             placeholder="Aug 21, 2021 · Sep 21 2021"
           />
         </div>
-        <button class="IconButton ButtonPrint">p</button>
-        <button class="IconButton ButtonDownload">d</button>
+        <button class="IconButton ButtonPrint">
+          <span class="material-icons-round">print</span>
+        </button>
+        <button class="IconButton ButtonDownload">
+          <span class="material-icons-round">download</span>
+        </button>
       </div>
     </div>
     <div class="TableRow">
@@ -29,7 +33,7 @@ import DashboardTable from './DashboardTable.vue';
 @import '@fontsource/roboto';
 @import '@/shared/styles';
 
-* {
+*:not(.material-icons-round) {
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -48,14 +52,14 @@ import DashboardTable from './DashboardTable.vue';
 
     .Interactions {
       display: flex;
-      column-gap: 4px;
+      column-gap: 8px;
 
       .DateRange {
         position: relative;
         input {
           width: 200px;
           background: transparent;
-          border: 1px solid #C6CACC;
+          border: 1px solid #c6cacc;
           height: 32px;
           border-radius: $border-radius-default;
           padding: 6px;
@@ -68,10 +72,16 @@ import DashboardTable from './DashboardTable.vue';
       .IconButton {
         width: 32px;
         height: 32px;
-        background: #F7F9FA;
+        display: flex;
+        background: #f7f9fa;
         border: none;
         border-radius: 4px;
-        color: #78909C;
+        color: #78909c;
+        span {
+          font-size: 14px;
+          margin: auto;
+          width: 100%;
+        }
       }
     }
   }

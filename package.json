@@ -17,6 +17,7 @@
     "@fontsource/racing-sans-one": "^4.5.10",
     "@fontsource/roboto": "^4.5.8",
     "@ngneat/falso": "^6.4.0",
+    "material-icons": "^1.13.2",
     "pinia": "^2.0.32",
     "vue": "^3.2.47"
   },
